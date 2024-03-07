@@ -13,10 +13,15 @@ export default function App() {
     setPlayer2Score(player2Score + 1);
   };
 
+  const resetScores = () => {
+    setPlayer1Score(0);
+    setPlayer2Score(0);
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Placar de CLICK</Text>
-      
+      <Text style={styles.title}>Placar de KILL Ludo</Text>
+
       <View style={styles.scoreContainer}>
         <Text style={styles.playerLabel}>Jogador 1:</Text>
         <Text style={styles.count}>{player1Score}</Text>
@@ -28,6 +33,8 @@ export default function App() {
         <Text style={styles.count}>{player2Score}</Text>
         <Button title="Incrementar" onPress={incrementPlayer2Score} />
       </View>
+
+      <Button title="Zerar Placar" onPress={resetScores} />
     </View>
   );
 }
